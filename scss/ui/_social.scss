@@ -1,0 +1,36 @@
+.social{
+	li{
+		padding: .5rem 0;
+		font-size: 1.6em;
+		font-weight: 100;
+		color: $black;
+		display: inline-block;
+		margin-right: 1rem;
+		cursor: pointer;
+		@extend %animateFast;
+		[data-icon]{
+			display: inline;
+			font-size: .85em;
+		}
+		&.social--flag{
+			float: right;
+			padding-right: 0;
+			margin-right: 0;
+		}
+	}
+}
+
+//Loop for the color of social
+$socialName: like, facebook, twitter;
+$socialColor: $red, $facebook, $twitter;
+
+@for $i from 1 through length($socialName) {
+
+    $this-color: nth($socialColor, $i); 
+
+    .social--#{nth($socialName, $i)} {
+		&:hover,&.selected{
+			color: $this-color;
+		}
+    }
+}

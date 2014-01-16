@@ -176,3 +176,6 @@
 .gesture-share:before {
   content: "T";
 }
+.gesture-clock:before {
+  content: "U";
+}

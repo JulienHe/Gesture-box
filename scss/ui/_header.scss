@@ -1,0 +1,15 @@
+.main--header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 44px;
+	background-color: $white;
+	border-bottom: 1px solid $border;
+	.main__header--icon{
+		font-size: 2.4em;
+		line-height: 50px;
+		text-decoration: none;
+		padding: .5rem;
+		color: $blue;
+	}
+}

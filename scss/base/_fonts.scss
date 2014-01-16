@@ -4,10 +4,15 @@ On importe la font depuis Google pour avoir de système de CDN (Multiple serveur
 la font plus vite et ne pase dépendre que de son serveur
 */
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Andada);
 
 body{
 	font-family: 'Open Sans', sans-serif;
 	font-size: 62.5%;
+  line-height: 1.4;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Andada', serif;
 }
 
 /*

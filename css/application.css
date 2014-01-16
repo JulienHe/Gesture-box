@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Andada);
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 /* ==========================================================================
    HTML5 display definitions
@@ -378,15 +379,32 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+/* line 408, ../scss/base/_normalize.scss */
+ul, ol, li {
+  margin: 0;
+  list-style-type: none;
+  padding: 0; }
+
+/* line 414, ../scss/base/_normalize.scss */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
 /*
 Open Sans de Google
 On importe la font depuis Google pour avoir de système de CDN (Multiple serveurs dans le monde pour avoir 
 la font plus vite et ne pase dépendre que de son serveur
 */
-/* line 8, ../scss/base/_fonts.scss */
+/* line 9, ../scss/base/_fonts.scss */
 body {
   font-family: 'Open Sans', sans-serif;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  line-height: 1.4; }
+
+/* line 14, ../scss/base/_fonts.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Andada', serif; }
 
 /*
 Chargement des icons font, les icons font permettent d'utiliser des icones qui s'agrandissent comme des icones vectorielles
@@ -400,7 +418,7 @@ http://fontastic.me/app/ pour créer vos premières fonts
   font-weight: normal;
   font-style: normal; }
 
-/* line 31, ../scss/base/_fonts.scss */
+/* line 36, ../scss/base/_fonts.scss */
 [data-icon]:before {
   font-family: "gesture-box" !important;
   content: attr(data-icon);
@@ -413,7 +431,7 @@ http://fontastic.me/app/ pour créer vos premières fonts
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-/* line 45, ../scss/base/_fonts.scss */
+/* line 50, ../scss/base/_fonts.scss */
 [class^="gesture-"]:before,
 [class*=" gesture-"]:before {
   font-family: "gesture-box" !important;
@@ -425,3 +443,148 @@ http://fontastic.me/app/ pour créer vos premières fonts
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
+
+/* line 3, ../scss/element/_base.scss */
+.main .main__feed--list .main__feed__list--article {
+  padding: 1rem; }
+
+/* line 16, ../scss/element/_base.scss */
+.social li, [class|="button"] {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.15s;
+  -moz-transition-duration: 0.15s;
+  -o-transition-duration: 0.15s;
+  transition-duration: 0.15s; }
+
+/* line 1, ../scss/ui/_base.scss */
+body {
+  background-color: #1d1f28;
+  padding-top: 44px; }
+
+/* line 2, ../scss/ui/_main.scss */
+.main .main__feed--list {
+  background-color: #fafafa; }
+  /* line 6, ../scss/ui/_main.scss */
+  .main .main__feed--list .main__feed__list--element .main__feed__list__element--image img {
+    width: 100%;
+    display: block;
+    vertical-align: top; }
+  /* line 15, ../scss/ui/_main.scss */
+  .main .main__feed--list .main__feed__list--article .main__feed__list__article--title {
+    margin-top: 0;
+    font-size: 2.5em;
+    margin-bottom: .3em; }
+  /* line 20, ../scss/ui/_main.scss */
+  .main .main__feed--list .main__feed__list--article .main__feed__list__article--summary {
+    font-size: 1.6em;
+    font-weight: 100; }
+/* line 26, ../scss/ui/_main.scss */
+.main .article--data {
+  font-family: 'Andada', serif;
+  margin-bottom: .4rem;
+  overflow: hidden;
+  font-size: 1.2em;
+  color: #939192; }
+/* line 33, ../scss/ui/_main.scss */
+.main time {
+  display: inline-block;
+  font-style: italic; }
+  /* line 36, ../scss/ui/_main.scss */
+  .main time:before {
+    content: '\00a0-\00a0'; }
+
+/* line 1, ../scss/ui/_header.scss */
+.main--header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 44px;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e7e7e7; }
+  /* line 8, ../scss/ui/_header.scss */
+  .main--header .main__header--icon {
+    font-size: 2.4em;
+    line-height: 50px;
+    text-decoration: none;
+    padding: .5rem;
+    color: #42b6f3; }
+
+/* line 1, ../scss/ui/_reveal.scss */
+.reveal {
+  position: absolute;
+  top: 0;
+  left: -100%; }
+
+/* line 2, ../scss/ui/_social.scss */
+.social li {
+  padding: .5rem 0;
+  font-size: 1.6em;
+  font-weight: 100;
+  color: #1d1f28;
+  display: inline-block;
+  margin-right: 1rem;
+  cursor: pointer; }
+  /* line 11, ../scss/ui/_social.scss */
+  .social li [data-icon] {
+    display: inline;
+    font-size: .85em; }
+  /* line 15, ../scss/ui/_social.scss */
+  .social li.social--flag {
+    float: right;
+    padding-right: 0;
+    margin-right: 0; }
+
+/* line 32, ../scss/ui/_social.scss */
+.social--like:hover, .social--like.selected {
+  color: #f05a49; }
+
+/* line 32, ../scss/ui/_social.scss */
+.social--facebook:hover, .social--facebook.selected {
+  color: #3b5998; }
+
+/* line 32, ../scss/ui/_social.scss */
+.social--twitter:hover, .social--twitter.selected {
+  color: #33a8cc; }
+
+/* line 1, ../scss/ui/_button.scss */
+[class|="button"] {
+  padding: .5rem 1rem;
+  margin: .5rem 0;
+  border: 1px solid #1d1f28;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  border-radius: 3px;
+  text-decoration: none;
+  color: #1d1f28;
+  font-size: 1.2em;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600; }
+
+/* line 25, ../scss/ui/_button.scss */
+.button--readMore {
+  border-color: #42b6f3;
+  color: #42b6f3; }
+  /* line 28, ../scss/ui/_button.scss */
+  .button--readMore:hover {
+    background-color: #42b6f3;
+    color: #fafafa; }
+
+/* line 25, ../scss/ui/_button.scss */
+.button--visit {
+  border-color: #f05a49;
+  color: #f05a49; }
+  /* line 28, ../scss/ui/_button.scss */
+  .button--visit:hover {
+    background-color: #f05a49;
+    color: #fafafa; }
+
+/* line 35, ../scss/ui/_button.scss */
+.button--readMore, .button--visit {
+  width: 100%; }
