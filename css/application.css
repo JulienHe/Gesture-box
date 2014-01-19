@@ -448,6 +448,25 @@ http://fontastic.me/app/ pour créer vos premières fonts
 .main .main__feed--list .main__feed__list--article {
   padding: 1rem; }
 
+/* line 7, ../scss/element/_base.scss */
+.reveal--list .reveal__list--feed figure img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%; }
+
+/* line 11, ../scss/element/_base.scss */
+.reveal {
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
 /* line 16, ../scss/element/_base.scss */
 .social li, [class|="button"] {
   -webkit-transition-property: all;
@@ -463,6 +482,14 @@ http://fontastic.me/app/ pour créer vos premières fonts
 body {
   background-color: #1d1f28;
   padding-top: 44px; }
+
+/* line 6, ../scss/ui/_base.scss */
+.left {
+  float: left; }
+
+/* line 10, ../scss/ui/_base.scss */
+.right {
+  float: right; }
 
 /* line 2, ../scss/ui/_main.scss */
 .main .main__feed--list {
@@ -497,7 +524,7 @@ body {
     content: '\00a0-\00a0'; }
 
 /* line 1, ../scss/ui/_header.scss */
-.main--header {
+.header {
   position: fixed;
   top: 0;
   width: 100%;
@@ -505,18 +532,62 @@ body {
   background-color: #fafafa;
   border-bottom: 1px solid #e7e7e7; }
   /* line 8, ../scss/ui/_header.scss */
-  .main--header .main__header--icon {
+  .header .header--icon {
     font-size: 2.4em;
-    line-height: 50px;
+    line-height: 48px;
     text-decoration: none;
-    padding: .5rem;
-    color: #42b6f3; }
+    padding: 0 .5rem;
+    color: #d2344f; }
 
 /* line 1, ../scss/ui/_reveal.scss */
 .reveal {
   position: absolute;
   top: 0;
-  left: -100%; }
+  left: -100%;
+  width: 90%;
+  background-color: #292b40;
+  z-index: 100; }
+  /* line 9, ../scss/ui/_reveal.scss */
+  .reveal .header {
+    background-color: #1f2130;
+    border-bottom-color: #292b40;
+    color: #fafafa;
+    width: 90%; }
+    /* line 14, ../scss/ui/_reveal.scss */
+    .reveal .header .header--icon {
+      color: white; }
+  /* line 18, ../scss/ui/_reveal.scss */
+  .reveal.visible {
+    left: 0; }
+
+/* line 22, ../scss/ui/_reveal.scss */
+.reveal__content {
+  padding-top: 44px;
+  height: 100vh;
+  overflow: scroll; }
+
+/* line 29, ../scss/ui/_reveal.scss */
+.reveal--list .reveal__list--feed:hover, .reveal--list .reveal__list--feed.selected {
+  background-color: #333550; }
+/* line 32, ../scss/ui/_reveal.scss */
+.reveal--list .reveal__list--feed figure {
+  width: 100%;
+  height: 60px;
+  padding: .5rem;
+  border-top: 1px solid #3d405f;
+  border-bottom: 1px solid #3d405f;
+  line-height: 40px; }
+  /* line 39, ../scss/ui/_reveal.scss */
+  .reveal--list .reveal__list--feed figure img {
+    float: left;
+    background-color: #1d1f28;
+    border: 1px solid #474a6f; }
+  /* line 45, ../scss/ui/_reveal.scss */
+  .reveal--list .reveal__list--feed figure figcaption {
+    padding-left: 50px;
+    color: #e1e1e1;
+    font-size: 1rem;
+    font-weight: 100; }
 
 /* line 2, ../scss/ui/_social.scss */
 .social li {
@@ -539,7 +610,7 @@ body {
 
 /* line 32, ../scss/ui/_social.scss */
 .social--like:hover, .social--like.selected {
-  color: #f05a49; }
+  color: #d2344f; }
 
 /* line 32, ../scss/ui/_social.scss */
 .social--facebook:hover, .social--facebook.selected {
@@ -578,11 +649,11 @@ body {
 
 /* line 25, ../scss/ui/_button.scss */
 .button--visit {
-  border-color: #f05a49;
-  color: #f05a49; }
+  border-color: #d2344f;
+  color: #d2344f; }
   /* line 28, ../scss/ui/_button.scss */
   .button--visit:hover {
-    background-color: #f05a49;
+    background-color: #d2344f;
     color: #fafafa; }
 
 /* line 35, ../scss/ui/_button.scss */

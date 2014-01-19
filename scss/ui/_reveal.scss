@@ -2,4 +2,52 @@
 	position: absolute;
 	top: 0;
 	left: -100%;
+	width: 90%;
+	background-color: $reveal;
+	z-index: 100;
+	@extend %animate;
+	.header{
+		background-color: darken($reveal,5%);
+		border-bottom-color: $reveal; 
+		color: $white;
+		width: 90%;
+		.header--icon{
+			color: white;
+		}
+	}
+	&.visible{
+		left: 0;
+	}
+}
+.reveal__content{
+	padding-top: 44px;
+	height: 100vh;
+	overflow: scroll;
+}
+.reveal--list{
+	.reveal__list--feed{
+		&:hover,&.selected{
+			background-color: lighten($reveal, 5%);
+		}
+		figure{
+			width: 100%;
+			height: 60px;
+			padding: .5rem;
+			border-top: 1px solid lighten($reveal, 10%);
+			border-bottom: 1px solid lighten($reveal, 10%);
+			line-height: 40px;
+			img{
+				float: left;
+				@extend %circleImage;
+				background-color: $black;
+				border: 1px solid lighten($reveal, 15%);
+			}
+			figcaption{
+				padding-left: 50px;
+				color: darken($white, 10%);
+				font-size: 1rem;
+				font-weight: 100;
+			}
+		}
+	}
 }
