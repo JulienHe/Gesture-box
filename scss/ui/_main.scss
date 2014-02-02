@@ -1,8 +1,19 @@
 .main{
-	.main__feed--list{
+	width: 100%;
+	@extend %animateFast;
+	//One article
+	.main--feed--article{
 		background-color: $white;
-		.main__feed__list--element{
-			.main__feed__list__element--image{
+		position: fixed;
+		right: -100%;
+		width: 100%;
+		@extend %animate;
+		&.visible{
+			right: 0;
+			position: absolute;
+		}
+		.main__feed__article--element{
+			.main__feed__article__element--image{
 				img{
 					width: 100%;
 					display: block;
@@ -10,16 +21,70 @@
 				}
 			}
 		}
-		.main__feed__list--article{
+		.main__feed__article--article{
 			@extend %basicSpace;;
-			.main__feed__list__article--title{
+			.main__feed__article__article--title{
 				margin-top: 0;
 				font-size: 2.5em;
 				margin-bottom: .3em;
 			}
-			.main__feed__list__article--summary{
+			.main__feed__article__article--summary{
 				font-size: 1.6em;
 				font-weight: 100;
+			}
+		}
+	}
+	//The feed list
+	.main--feed--list{
+		background-color: $black;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		@extend %animate;
+		&.hide{
+			left: -40px;
+			@include opacity(.2);
+			@include scale(.9);
+		}
+		.main__feed__list--element{
+			@extend %animateFast;
+			border-bottom: 1px solid $black;
+			position: relative;
+			&.readed{
+				@include opacity(.5);
+			}
+			.main__feed__list__element--image{
+				position: relative;
+				img{
+					width: 100%;
+					//Permet de ne pas avoir un espace en dessous de l'image
+					display: block;
+					vertical-align: top;
+				}
+				.main__feed__list__element__image--text{
+					width: 100%;
+					padding:1rem .5rem;
+					position: absolute;
+					bottom: 0;
+					background: white;
+					.article--data{
+						margin-bottom: 0;
+					}
+					.main__feed__list__article--title{
+						margin-top: 0;
+						margin-bottom: .3rem;
+					}
+				}
+			}
+			.main__feed__list__element--like{
+				position: absolute;
+				font-size: 5rem;
+				top: 50%;
+				left: 50%;
+				color: $red;
+				@include translate(-50%, -70%);
+				pointer-events: none;
+				display: none;
 			}
 		}
 	}

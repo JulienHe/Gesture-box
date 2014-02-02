@@ -17,3 +17,13 @@
    @include transition-property(all);
    @include transition-duration(.15s);
 }
+
+.noEvent{
+	pointer-events: none;
+	@include opacity(.5);
+}
+
+.fixedItem{
+	position: fixed;
+	@include opacity(.5);
+}

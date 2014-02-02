@@ -14,38 +14,84 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="default">
 
 	<!-- Iphone icons -->
-		<!-- iPhone / iPod -->
+	<!-- iPhone / iPod -->
 	<link href="img/icons/AppIcon60x60.png" rel="apple-touch-icon" />
-		<!-- iPhone retina -->
+	<!-- iPhone retina -->
 	<link href="img/icons/AppIcon60x60@2x.png" rel="apple-touch-icon" sizes="120x120" />
 
 	<!-- Startup Screen -->
-		<!-- iPhone 4 Retina -->
-    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="">
+	<!-- iPhone 4 Retina -->
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (-webkit-device-pixel-ratio: 2)" href="">
 
-    	<!-- iPhone 5 Retina -->
-    <link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="">
+	<!-- iPhone 5 Retina -->
+	<link rel="apple-touch-startup-image" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" href="">
 
 </head>
 <body>
 	<main role="main" class="main">
-		<header class="header">
-			<span data-icon="g" class="header--icon"></span>
-		</header>
-		<section class="main--feed">
-			<article class="main__feed--list">
-				<ul class="main__feed__list">
-					<li class="main__feed__list--element">
-						<figure class="main__feed__list__element--image">
+		<section class="main--feed--list">
+			<header class="header">
+				<span data-icon="g" class="header--icon showReveal"></span>
+			</header>
+			<ul class="main__feed--list">
+				<li class="main__feed__list--element">
+					<figure class="main__feed__list__element--image">
+						<img src="img/awwward/the-hobbit.jpg" alt="The hobbit">
+						<figcaption class="main__feed__list__element__image--text">
+							<h2 class="main__feed__list__article--title">A Journey Through Middle-earth</h2>
+							<div class="article--data">
+								<span class="autho__name">By North Kingdom</span>
+								<time datetime="2013-12-11T16:39:57">Thursday 16, January</time>
+							</div>
+						</figcaption>
+					</figure>
+					<span data-icon="i" class="main__feed__list__element--like"></span>
+				</li>
+				<li class="main__feed__list--element">
+					<figure class="main__feed__list__element--image">
+						<img src="img/awwward/fremtidens-hoder.jpg" alt="The hobbit">
+						<figcaption class="main__feed__list__element__image--text">
+							<h2 class="main__feed__list__article--title">Fremtidens Hoder</h2>
+							<div class="article--data">
+								<span class="autho__name">By Good Morning AS</span>
+								<time datetime="2013-12-11T16:39:57">Thursday 30, January</time>
+							</div>
+						</figcaption>
+					</figure>
+					<span data-icon="i" class="main__feed__list__element--like"></span>
+				</li>
+				<li class="main__feed__list--element">
+					<figure class="main__feed__list__element--image">
+						<img src="img/awwward/manuel-rueda.jpg" alt="The hobbit">
+						<figcaption class="main__feed__list__element__image--text">
+							<h2 class="main__feed__list__article--title">Manuel Rueda – Video Freelancer</h2>
+							<div class="article--data">
+								<span class="autho__name">By Raffael Stüken</span>
+								<time datetime="2013-12-11T16:39:57">Friday 31, January</time>
+							</div>
+						</figcaption>
+					</figure>
+					<span data-icon="i" class="main__feed__list__element--like"></span>
+				</li>
+			</ul>
+		</section>
+		<section class="main--feed--article">
+			<header class="header">
+				<span data-icon="q" class="header--icon hideArticle"></span>
+			</header>
+			<article class="main__feed--article">
+				<ul class="main__feed__article">
+					<li class="main__feed__article--element">
+						<figure class="main__feed__article__element--image">
 							<img src="img/awwward/the-hobbit.jpg" alt="The hobbit">
 						</figure>
-						<div class="main__feed__list--article">
-							<h2 class="main__feed__list__article--title">A Journey Through Middle-earth</h2>
+						<div class="main__feed__article--article">
+							<h2 class="main__feed__article__article--title">A Journey Through Middle-earth</h2>
 							<div class="article--data">
 								<span class="autho__name">By North Kingdom</span>
 								<time datetime="2013-12-11T16:39:57">1 day ago</time>
 							</div>
-							<p class="main__feed__list__article--summary">Inspired by the epic fantasy adventure “The Hobbit: The Desolation of Smaug,” “A Journey Through Middle-earth,” is a new Chrome Experiment that brings the locations and characters from “The Hobbit” trilogy to life.</p>
+							<p class="main__feed__article__article--summary">Inspired by the epic fantasy adventure “The Hobbit: The Desolation of Smaug,” “A Journey Through Middle-earth,” is a new Chrome Experiment that brings the locations and characters from “The Hobbit” trilogy to life.</p>
 							<ul class="social">
 								<li class="social--like"><span data-icon="i"></span> 23</li>
 								<li class="social--facebook"><span data-icon="M"></span> 14</li>
@@ -60,11 +106,11 @@
 			</article>
 		</section>
 	</main>
-	<aside class="reveal visible">
+	<aside class="reveal">
 		<header class="header">
 			<nav>
 				<ul>
-					<li><a href="" data-icon="g" class="header--icon right"></a></li>
+					<li><a href="" data-icon="g" class="header--icon hideReveal right"></a></li>
 				</ul>
 			</nav>
 		</header>
@@ -78,26 +124,26 @@
 				</li>
 				<li class="reveal__list--feed">
 					<figure>
-						<img src="img/logo/fubiz.png" alt="" width="40" height="40">
-						<figcaption>Fubiz</figcaption>
+						<img src="img/logo/awwward.png" alt="" width="40" height="40">
+						<figcaption>Awwward</figcaption>
 					</figure>
 				</li>
 				<li class="reveal__list--feed">
 					<figure>
-						<img src="img/logo/fubiz.png" alt="" width="40" height="40">
-						<figcaption>Fubiz</figcaption>
+						<img src="img/logo/abduzeedo.png" alt="" width="40" height="40">
+						<figcaption>Abduzeedo</figcaption>
 					</figure>
 				</li>
 				<li class="reveal__list--feed">
 					<figure>
-						<img src="img/logo/fubiz.png" alt="" width="40" height="40">
-						<figcaption>Fubiz</figcaption>
+						<img src="img/logo/webdesignerdepot.png" alt="" width="40" height="40">
+						<figcaption>Webdesigner depot</figcaption>
 					</figure>
 				</li>
 				<li class="reveal__list--feed">
 					<figure>
-						<img src="img/logo/fubiz.png" alt="" width="40" height="40">
-						<figcaption>Fubiz</figcaption>
+						<img src="img/logo/csstricks.png" alt="" width="40" height="40">
+						<figcaption>Css-tricks</figcaption>
 					</figure>
 				</li>
 				<li class="reveal__list--feed">
@@ -145,6 +191,16 @@
 			</ul>
 		</div>
 	</aside>
+	<menu type="dialog" class="dialog">
+		<nav>
+			<ul class="dialog--list">
+				<li><a href="#" class="dialog__list--facebook" data-event="facebookShare">Partager sur Facebook</a></li>
+				<li><a href="#" class="dialog__list--twitter" data-event="twitterShare">Partager sur Twitter</a></li>
+				<li><a href="#" class="dialog__list--google" data-event="googlePlusShare">Partager sur Google+</a></li>
+				<li><a href="#" class="dialog__list--cancel" data-event="closeDialog">Cancel</a></li>
+			</ul>
+		</nav>
+	</menu>
 
 	<!-- Javascript -->
 	<script src="js/jquery-2.0.3.min.js"></script>

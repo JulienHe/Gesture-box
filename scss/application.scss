@@ -6,6 +6,7 @@
 @import 'base/normalize';
 @import 'base/variable';
 @import 'base/fonts';
+@import 'base/animations';
 
 @import 'element/base';
 // Module
@@ -14,6 +15,7 @@
 @import 'ui/base';
 @import 'ui/main';
 @import 'ui/header';
+@import 'ui/dialog';
 @import 'ui/reveal';
 @import 'ui/social';
 @import 'ui/button';

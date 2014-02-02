@@ -1,6 +1,8 @@
 .reveal{
 	position: absolute;
 	top: 0;
+	bottom: 0;
+	overflow: hidden;
 	left: -100%;
 	width: 90%;
 	background-color: $reveal;
@@ -10,7 +12,7 @@
 		background-color: darken($reveal,5%);
 		border-bottom-color: $reveal; 
 		color: $white;
-		width: 90%;
+		width: 100%;
 		.header--icon{
 			color: white;
 		}
@@ -20,9 +22,13 @@
 	}
 }
 .reveal__content{
-	padding-top: 44px;
-	height: 100vh;
-	overflow: scroll;
+	height: 505px;
+	width: 100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	position: absolute;
+	top: 44px;
+	background-color: $reveal;
 }
 .reveal--list{
 	.reveal__list--feed{

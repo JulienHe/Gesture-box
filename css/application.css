@@ -445,7 +445,7 @@ http://fontastic.me/app/ pour créer vos premières fonts
   -moz-osx-font-smoothing: grayscale; }
 
 /* line 3, ../scss/element/_base.scss */
-.main .main__feed--list .main__feed__list--article {
+.main .main--feed--article .main__feed__article--article {
   padding: 1rem; }
 
 /* line 7, ../scss/element/_base.scss */
@@ -457,7 +457,7 @@ http://fontastic.me/app/ pour créer vos premières fonts
   border-radius: 50%; }
 
 /* line 11, ../scss/element/_base.scss */
-.reveal {
+.main .main--feed--article, .main .main--feed--list, .dialog, .reveal {
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -468,7 +468,7 @@ http://fontastic.me/app/ pour créer vos premières fonts
   transition-duration: 0.3s; }
 
 /* line 16, ../scss/element/_base.scss */
-.social li, [class|="button"] {
+.main, .main .main--feed--list .main__feed__list--element, .social li, [class|="button"] {
   -webkit-transition-property: all;
   -moz-transition-property: all;
   -o-transition-property: all;
@@ -478,60 +478,149 @@ http://fontastic.me/app/ pour créer vos premières fonts
   -o-transition-duration: 0.15s;
   transition-duration: 0.15s; }
 
+/* line 21, ../scss/element/_base.scss */
+.noEvent {
+  pointer-events: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5; }
+
+/* line 26, ../scss/element/_base.scss */
+.fixedItem {
+  position: fixed;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+  opacity: 0.5; }
+
 /* line 1, ../scss/ui/_base.scss */
 body {
-  background-color: #1d1f28;
-  padding-top: 44px; }
+  background-color: #1d1f28; }
 
-/* line 6, ../scss/ui/_base.scss */
+/* line 5, ../scss/ui/_base.scss */
 .left {
   float: left; }
 
-/* line 10, ../scss/ui/_base.scss */
+/* line 9, ../scss/ui/_base.scss */
 .right {
   float: right; }
 
-/* line 2, ../scss/ui/_main.scss */
-.main .main__feed--list {
-  background-color: #fafafa; }
-  /* line 6, ../scss/ui/_main.scss */
-  .main .main__feed--list .main__feed__list--element .main__feed__list__element--image img {
-    width: 100%;
-    display: block;
-    vertical-align: top; }
-  /* line 15, ../scss/ui/_main.scss */
-  .main .main__feed--list .main__feed__list--article .main__feed__list__article--title {
-    margin-top: 0;
-    font-size: 2.5em;
-    margin-bottom: .3em; }
-  /* line 20, ../scss/ui/_main.scss */
-  .main .main__feed--list .main__feed__list--article .main__feed__list__article--summary {
-    font-size: 1.6em;
-    font-weight: 100; }
-/* line 26, ../scss/ui/_main.scss */
-.main .article--data {
-  font-family: 'Andada', serif;
-  margin-bottom: .4rem;
-  overflow: hidden;
-  font-size: 1.2em;
-  color: #939192; }
-/* line 33, ../scss/ui/_main.scss */
-.main time {
-  display: inline-block;
-  font-style: italic; }
-  /* line 36, ../scss/ui/_main.scss */
-  .main time:before {
-    content: '\00a0-\00a0'; }
+/* line 15, ../scss/ui/_base.scss */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important; }
+
+/* line 1, ../scss/ui/_main.scss */
+.main {
+  width: 100%; }
+  /* line 5, ../scss/ui/_main.scss */
+  .main .main--feed--article {
+    background-color: #fafafa;
+    position: fixed;
+    right: -100%;
+    width: 100%; }
+    /* line 11, ../scss/ui/_main.scss */
+    .main .main--feed--article.visible {
+      right: 0;
+      position: absolute; }
+    /* line 17, ../scss/ui/_main.scss */
+    .main .main--feed--article .main__feed__article--element .main__feed__article__element--image img {
+      width: 100%;
+      display: block;
+      vertical-align: top; }
+    /* line 26, ../scss/ui/_main.scss */
+    .main .main--feed--article .main__feed__article--article .main__feed__article__article--title {
+      margin-top: 0;
+      font-size: 2.5em;
+      margin-bottom: .3em; }
+    /* line 31, ../scss/ui/_main.scss */
+    .main .main--feed--article .main__feed__article--article .main__feed__article__article--summary {
+      font-size: 1.6em;
+      font-weight: 100; }
+  /* line 38, ../scss/ui/_main.scss */
+  .main .main--feed--list {
+    background-color: #1d1f28;
+    position: absolute;
+    left: 0;
+    width: 100%; }
+    /* line 44, ../scss/ui/_main.scss */
+    .main .main--feed--list.hide {
+      left: -40px;
+      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=20);
+      opacity: 0.2;
+      -webkit-transform: scale(0.9, 0.9);
+      -moz-transform: scale(0.9, 0.9);
+      -ms-transform: scale(0.9, 0.9);
+      -o-transform: scale(0.9, 0.9);
+      transform: scale(0.9, 0.9); }
+    /* line 49, ../scss/ui/_main.scss */
+    .main .main--feed--list .main__feed__list--element {
+      border-bottom: 1px solid #1d1f28;
+      position: relative; }
+      /* line 53, ../scss/ui/_main.scss */
+      .main .main--feed--list .main__feed__list--element.readed {
+        filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+        opacity: 0.5; }
+      /* line 56, ../scss/ui/_main.scss */
+      .main .main--feed--list .main__feed__list--element .main__feed__list__element--image {
+        position: relative; }
+        /* line 58, ../scss/ui/_main.scss */
+        .main .main--feed--list .main__feed__list--element .main__feed__list__element--image img {
+          width: 100%;
+          display: block;
+          vertical-align: top; }
+        /* line 64, ../scss/ui/_main.scss */
+        .main .main--feed--list .main__feed__list--element .main__feed__list__element--image .main__feed__list__element__image--text {
+          width: 100%;
+          padding: 1rem .5rem;
+          position: absolute;
+          bottom: 0;
+          background: white; }
+          /* line 70, ../scss/ui/_main.scss */
+          .main .main--feed--list .main__feed__list--element .main__feed__list__element--image .main__feed__list__element__image--text .article--data {
+            margin-bottom: 0; }
+          /* line 73, ../scss/ui/_main.scss */
+          .main .main--feed--list .main__feed__list--element .main__feed__list__element--image .main__feed__list__element__image--text .main__feed__list__article--title {
+            margin-top: 0;
+            margin-bottom: .3rem; }
+      /* line 79, ../scss/ui/_main.scss */
+      .main .main--feed--list .main__feed__list--element .main__feed__list__element--like {
+        position: absolute;
+        font-size: 5rem;
+        top: 50%;
+        left: 50%;
+        color: #d2344f;
+        -webkit-transform: translate(-50%, -70%);
+        -moz-transform: translate(-50%, -70%);
+        -ms-transform: translate(-50%, -70%);
+        -o-transform: translate(-50%, -70%);
+        transform: translate(-50%, -70%);
+        pointer-events: none;
+        display: none; }
+  /* line 91, ../scss/ui/_main.scss */
+  .main .article--data {
+    font-family: 'Andada', serif;
+    margin-bottom: .4rem;
+    overflow: hidden;
+    font-size: 1.2em;
+    color: #939192; }
+  /* line 98, ../scss/ui/_main.scss */
+  .main time {
+    display: inline-block;
+    font-style: italic; }
+    /* line 101, ../scss/ui/_main.scss */
+    .main time:before {
+      content: '\00a0-\00a0'; }
 
 /* line 1, ../scss/ui/_header.scss */
 .header {
-  position: fixed;
+  position: -webkit-sticky;
   top: 0;
+  z-index: 1;
   width: 100%;
   height: 44px;
   background-color: #fafafa;
-  border-bottom: 1px solid #e7e7e7; }
-  /* line 8, ../scss/ui/_header.scss */
+  border-bottom: 1px solid #e7e7e7;
+  z-index: 1; }
+  /* line 10, ../scss/ui/_header.scss */
   .header .header--icon {
     font-size: 2.4em;
     line-height: 48px;
@@ -539,37 +628,87 @@ body {
     padding: 0 .5rem;
     color: #d2344f; }
 
+/* line 1, ../scss/ui/_dialog.scss */
+.dialog {
+  bottom: -100%;
+  padding-left: 0;
+  margin: 0;
+  position: fixed;
+  width: 100%;
+  background-color: white; }
+  /* line 9, ../scss/ui/_dialog.scss */
+  .dialog.visible {
+    bottom: 0; }
+  /* line 12, ../scss/ui/_dialog.scss */
+  .dialog .dialog--list {
+    margin: 0;
+    padding: 1rem; }
+    /* line 15, ../scss/ui/_dialog.scss */
+    .dialog .dialog--list li {
+      border: 1px solid #e7e7e7;
+      border-bottom: 0;
+      -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -ms-border-radius: 2px;
+      -o-border-radius: 2px;
+      border-radius: 2px; }
+      /* line 19, ../scss/ui/_dialog.scss */
+      .dialog .dialog--list li:last-child, .dialog .dialog--list li:nth-child(3) {
+        border-bottom: 1px solid #e7e7e7; }
+      /* line 22, ../scss/ui/_dialog.scss */
+      .dialog .dialog--list li:last-child {
+        margin-top: 1rem; }
+      /* line 25, ../scss/ui/_dialog.scss */
+      .dialog .dialog--list li [class|="dialog__list"] {
+        color: #42b6f3;
+        width: 100%;
+        line-height: 40px;
+        font-size: 1rem;
+        display: inline-block;
+        text-decoration: none;
+        text-align: center;
+        font-weight: 600; }
+      /* line 35, ../scss/ui/_dialog.scss */
+      .dialog .dialog--list li .dialog__list--cancel {
+        color: #d2344f; }
+
 /* line 1, ../scss/ui/_reveal.scss */
 .reveal {
   position: absolute;
   top: 0;
+  bottom: 0;
+  overflow: hidden;
   left: -100%;
   width: 90%;
   background-color: #292b40;
   z-index: 100; }
-  /* line 9, ../scss/ui/_reveal.scss */
+  /* line 11, ../scss/ui/_reveal.scss */
   .reveal .header {
     background-color: #1f2130;
     border-bottom-color: #292b40;
     color: #fafafa;
-    width: 90%; }
-    /* line 14, ../scss/ui/_reveal.scss */
+    width: 100%; }
+    /* line 16, ../scss/ui/_reveal.scss */
     .reveal .header .header--icon {
       color: white; }
-  /* line 18, ../scss/ui/_reveal.scss */
+  /* line 20, ../scss/ui/_reveal.scss */
   .reveal.visible {
     left: 0; }
 
-/* line 22, ../scss/ui/_reveal.scss */
+/* line 24, ../scss/ui/_reveal.scss */
 .reveal__content {
-  padding-top: 44px;
-  height: 100vh;
-  overflow: scroll; }
+  height: 505px;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  position: absolute;
+  top: 44px;
+  background-color: #292b40; }
 
-/* line 29, ../scss/ui/_reveal.scss */
+/* line 35, ../scss/ui/_reveal.scss */
 .reveal--list .reveal__list--feed:hover, .reveal--list .reveal__list--feed.selected {
   background-color: #333550; }
-/* line 32, ../scss/ui/_reveal.scss */
+/* line 38, ../scss/ui/_reveal.scss */
 .reveal--list .reveal__list--feed figure {
   width: 100%;
   height: 60px;
@@ -577,12 +716,12 @@ body {
   border-top: 1px solid #3d405f;
   border-bottom: 1px solid #3d405f;
   line-height: 40px; }
-  /* line 39, ../scss/ui/_reveal.scss */
+  /* line 45, ../scss/ui/_reveal.scss */
   .reveal--list .reveal__list--feed figure img {
     float: left;
     background-color: #1d1f28;
     border: 1px solid #474a6f; }
-  /* line 45, ../scss/ui/_reveal.scss */
+  /* line 51, ../scss/ui/_reveal.scss */
   .reveal--list .reveal__list--feed figure figcaption {
     padding-left: 50px;
     color: #e1e1e1;
