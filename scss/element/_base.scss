@@ -27,3 +27,8 @@
 	position: fixed;
 	@include opacity(.5);
 }
+
+[data-scrollable]{
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}

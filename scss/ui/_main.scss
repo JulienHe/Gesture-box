@@ -7,10 +7,13 @@
 		position: fixed;
 		right: -100%;
 		width: 100%;
+		padding-top: 44px;
 		@extend %animate;
 		&.visible{
 			right: 0;
+			top: 0;
 			position: absolute;
+			z-index: 100;
 		}
 		.main__feed__article--element{
 			.main__feed__article__element--image{
@@ -40,11 +43,12 @@
 		position: absolute;
 		left: 0;
 		width: 100%;
+		padding-top: 44px;
 		@extend %animate;
 		&.hide{
-			left: -40px;
+			left: -20px;
 			@include opacity(.2);
-			@include scale(.9);
+			@include scale(.95);
 		}
 		.main__feed__list--element{
 			@extend %animateFast;
@@ -54,19 +58,14 @@
 				@include opacity(.5);
 			}
 			.main__feed__list__element--image{
-				position: relative;
 				img{
 					width: 100%;
 					//Permet de ne pas avoir un espace en dessous de l'image
-					display: block;
 					vertical-align: top;
 				}
 				.main__feed__list__element__image--text{
-					width: 100%;
 					padding:1rem .5rem;
-					position: absolute;
-					bottom: 0;
-					background: white;
+					background-color: white;
 					.article--data{
 						margin-bottom: 0;
 					}

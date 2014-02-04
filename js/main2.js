@@ -2,7 +2,7 @@ var utils = {};
 
 // log
 utils.log = function(message, force) {
-	console.log('%cGesture box: %c' + eval('(' + message + ')'), 'font-family:arial,sans-serif;color:#1abf89;line-height:20px;', 'font-family:cursor,monospace;color:#333;');
+	console.log('%cGesture box: %c' + message, 'font-family:arial,sans-serif;color:#1abf89;line-height:2em;', 'font-family:cursor,monospace;color:#333;');
 };
 
 
@@ -69,9 +69,9 @@ $(function(){
 
 	//Show or hide reveal
 	Hammer($('.showReveal')).on("tap", function(event) {
-		console.log(event);
 		$('.reveal').addClass('visible');
 		$('.main').addClass('fixedItem');
+		return utils.log(this, event);
 	});
 
 	//Show or hide reveal

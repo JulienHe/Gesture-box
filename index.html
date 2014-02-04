@@ -33,7 +33,7 @@
 			<header class="header">
 				<span data-icon="g" class="header--icon showReveal"></span>
 			</header>
-			<ul class="main__feed--list">
+			<ul class="main__feed--list" data-scrollable>
 				<li class="main__feed__list--element">
 					<figure class="main__feed__list__element--image">
 						<img src="img/awwward/the-hobbit.jpg" alt="The hobbit">
@@ -79,43 +79,37 @@
 			<header class="header">
 				<span data-icon="q" class="header--icon hideArticle"></span>
 			</header>
-			<article class="main__feed--article">
-				<ul class="main__feed__article">
-					<li class="main__feed__article--element">
-						<figure class="main__feed__article__element--image">
-							<img src="img/awwward/the-hobbit.jpg" alt="The hobbit">
-						</figure>
-						<div class="main__feed__article--article">
-							<h2 class="main__feed__article__article--title">A Journey Through Middle-earth</h2>
-							<div class="article--data">
-								<span class="autho__name">By North Kingdom</span>
-								<time datetime="2013-12-11T16:39:57">1 day ago</time>
-							</div>
-							<p class="main__feed__article__article--summary">Inspired by the epic fantasy adventure “The Hobbit: The Desolation of Smaug,” “A Journey Through Middle-earth,” is a new Chrome Experiment that brings the locations and characters from “The Hobbit” trilogy to life.</p>
-							<ul class="social">
-								<li class="social--like"><span data-icon="i"></span> 23</li>
-								<li class="social--facebook"><span data-icon="M"></span> 14</li>
-								<li class="social--twitter"><span data-icon="u"></span> 18</li>
-								<li class="social--flag"><span data-icon="j"></span></li>
-							</ul>
-							<a href="#" class="button--readMore">Read more</a>
-							<a href="#" class="button--visit">Visit the website</a>
+			<article class="main__feed__article">
+				<div class="main__feed__article--element" data-scrollable>
+					<figure class="main__feed__article__element--image">
+						<img src="img/awwward/the-hobbit.jpg" alt="The hobbit">
+					</figure>
+					<div class="main__feed__article--article">
+						<h2 class="main__feed__article__article--title">A Journey Through Middle-earth</h2>
+						<div class="article--data">
+							<span class="autho__name">By North Kingdom</span>
+							<time datetime="2013-12-11T16:39:57">1 day ago</time>
 						</div>
-					</li>
-				</ul>
+						<p class="main__feed__article__article--summary">Inspired by the epic fantasy adventure “The Hobbit: The Desolation of Smaug,” “A Journey Through Middle-earth,” is a new Chrome Experiment that brings the locations and characters from “The Hobbit” trilogy to life.</p>
+						<ul class="social">
+							<li class="social--like"><span data-icon="i"></span> 23</li>
+							<li class="social--facebook"><span data-icon="M"></span> 14</li>
+							<li class="social--twitter"><span data-icon="u"></span> 18</li>
+							<li class="social--flag"><span data-icon="j"></span></li>
+						</ul>
+						<a href="#" class="button--readMore">Read more</a>
+						<a href="#" class="button--visit">Visit the website</a>
+					</div>
+				</div>
 			</article>
 		</section>
 	</main>
 	<aside class="reveal">
 		<header class="header">
-			<nav>
-				<ul>
-					<li><a href="" data-icon="g" class="header--icon hideReveal right"></a></li>
-				</ul>
-			</nav>
+			<span data-icon="g" class="header--icon hideReveal right"></span>
 		</header>
 		<div class="reveal__content">
-			<ul class="reveal--list">
+			<ul class="reveal--list" data-scrollable>
 				<li class="reveal__list--feed">
 					<figure>
 						<img src="img/logo/fubiz.png" alt="" width="40" height="40">
@@ -204,7 +198,10 @@
 
 	<!-- Javascript -->
 	<script src="js/jquery-2.0.3.min.js"></script>
-	<script src="js/quo.js"></script>
+	
+	<!-- With hammer -->
+	<script src="js/hammerjs/hammer.js"></script>
+	<script src="js/hammerjs/jquery.hammer-standalone.min.js"></script>
 	<script src="js/main.js"></script>
 </body>
 </html>
