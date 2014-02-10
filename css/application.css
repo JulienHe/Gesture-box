@@ -775,24 +775,22 @@ body {
   text-transform: uppercase;
   font-weight: 600; }
 
-/* line 25, ../scss/ui/_button.scss */
+/* line 26, ../scss/ui/_button.scss */
 .button--readMore {
   border-color: #42b6f3;
-  color: #42b6f3; }
-  /* line 28, ../scss/ui/_button.scss */
+  color: #42b6f3;
+  width: 100%; }
+  /* line 30, ../scss/ui/_button.scss */
   .button--readMore:hover {
     background-color: #42b6f3;
     color: #fafafa; }
 
-/* line 25, ../scss/ui/_button.scss */
+/* line 26, ../scss/ui/_button.scss */
 .button--visit {
   border-color: #d2344f;
-  color: #d2344f; }
-  /* line 28, ../scss/ui/_button.scss */
+  color: #d2344f;
+  width: 100%; }
+  /* line 30, ../scss/ui/_button.scss */
   .button--visit:hover {
     background-color: #d2344f;
     color: #fafafa; }
-
-/* line 35, ../scss/ui/_button.scss */
-.button--readMore, .button--visit {
-  width: 100%; }

@@ -1,7 +1,7 @@
-var revealWidth = $('.reveal').width(),revealPosition= '',myTimer = '';
-
+var revealWidth = $('.reveal').width(), revealPosition= '', myTimer = '', $listElement = $('.main__feed__list--element');
 
 function toggleDialog(){
+	//Show - hide the dialog box
 	$('.main,.reveal').toggleClass('noEvent');
 	$('.dialog').toggleClass('visible');
 }
@@ -13,45 +13,10 @@ function toggleArticle(){
 }
 
 function toggleReveal(){
+	//Show hide reveal
 	$('.reveal').toggleClass('visible');
 	$('.main').toggleClass('fixedItem');
 }
-
-// Maximum milliseconds between two taps before they are not considered 
-// a doubletap anymore.
-var maxInterval = 500;
-
-// Timestamp (a.k.a: "UNIX epoch" - milliseconds since 1 january 1970)
-// Here it is set to Infinity because the first tap should always work.
-var lastTap = Infinity;
-
-/*!
- * Longer but easier to understand solution
- */
-
-// Here we declare ou "shouldDoNextTap" function.
-function shouldDoNextTap (type) {
-	// If the type is a "tap" event
-	// continue ...
-	if(type == 'tap') {
-		// If the interval between the last tap and now is superior to our max.
-		// continue ..
-		if(lastTap - Date.now() < maxInterval) {
-			// Reset our timer to the current epoch (time)
-			lastTap = Infinity;
-			// Don't let the "tap" event be triggered
-			return false;
-		}
-		// othewise
-		else {
-			// Reset our timer to the current epoch (time)
-			lastTap = Date.now();
-			// Do let the "tap" event be triggered
-			return true;
-		}
-	}
-}
-
 
 // jQuery part
 $(function(){
@@ -79,7 +44,7 @@ $(function(){
 	});
 
 	// Swipe an element
-	Hammer($('.main__feed__list--element')).on("swipe", function(event) {
+	Hammer($listElement).on("swipe", function(event) {
 		console.log(this, event);
 		//Determine if it's left or right's swipe
 		if(event.gesture.direction == 'left'){
@@ -90,14 +55,12 @@ $(function(){
 	});
 
     //Hold an element in the list
-    Hammer($('.main__feed__list--element')).on("hold", function(event) {
-    	console.log(event);
+    Hammer($listElement).on("hold", function(event) {
     	toggleDialog();
     });
 
     //Hide the dialog
     Hammer($('.dialog__list--cancel')).on("tap", function(event) {
-    	console.log(event);
     	var eventTap = $(this).data('event');
     	event.preventDefault();
     	if(eventTap == 'closeDialog'){
@@ -106,13 +69,13 @@ $(function(){
     });
 
     //View article
-    Hammer($('.main__feed__list--element')).on("tap", function(event) {
-    	console.log(event.type);
-
+    Hammer($listElement).on("tap", function(event) {
+    	
     	// Without Ajax
     	// if(shouldDoNextTap(event.type)) {
     	// 	toggleArticle();
     	// }
+
     	clearTimeout(myTimer);
     	me = $(this);
 
@@ -126,7 +89,6 @@ $(function(){
 				data: {},
 				success: function(data) {
 					//On success get the data
-					console.log(data);
 					//Add the content to the right place
 					$('.main__feed__article--element').html(data);
 					toggleArticle();
@@ -138,23 +100,19 @@ $(function(){
 		}, 175);
     });
 
-
-    //Hide the article
-    Hammer($('.hideArticle')).on("tap", function(event) {
-    	console.log(event.type);
-    	toggleArticle();
-    });
-
     //like a post
-    Hammer($('.main__feed__list--element')).on("doubletap", function(event) {
+    Hammer($listElement).on("doubletap", function(event) {
+    	//Clear the timer and continue with the doubleTap
     	clearTimeout(myTimer);
-    	console.log(event.type);
-    	event.stopPropagation();
+    	//Prevent the default 
     	event.preventDefault();
-		//event.preventDefault();
 		$(this).find('.main__feed__list__element--like').fadeIn(200,function(){
 			$(this).delay(300).fadeOut(400);
 		});
 	});
 
+    //Hide the article
+    Hammer($('.hideArticle')).on("tap", function(event) {
+    	toggleArticle();
+    });
 });

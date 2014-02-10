@@ -18,20 +18,18 @@
 $names: readMore, visit;
 $colors: $blue, $red;
 
+//Create a loop for the button
 @for $i from 1 through length($names) {
-
+	
     $this-color: nth($colors, $i); 
-
+	//Add the name with the good color
     .button--#{nth($names, $i)} {
         border-color: $this-color;
 		color: $this-color;
+		width: 100%;
 		&:hover{
 			background-color: $this-color;
 			color: $white;
 		}
     }
-}
-
-.button--readMore,.button--visit{
-	width: 100%;
 }
