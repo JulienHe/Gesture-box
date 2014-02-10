@@ -1,0 +1,40 @@
+.dialog{
+	@extend %animate;
+	bottom: -100%;
+	padding-left: 0;
+	margin: 0;
+	position: fixed;
+	width: 100%;
+	background-color: white;
+	&.visible{
+		bottom: 0;
+	}
+	.dialog--list{
+		margin: 0;
+		padding: 1rem;
+		li{
+			border: 1px solid $border;
+			border-bottom: 0;
+			@include border-radius(2px);
+			&:last-child, &:nth-child(3){
+				border-bottom: 1px solid $border;
+			}
+			&:last-child{
+				margin-top: 1rem;
+			}
+			[class|="dialog__list"]{
+				color: $blue;
+				width: 100%;
+				line-height: 40px;
+				font-size: 1rem;
+				display: inline-block;
+				text-decoration: none;
+				text-align: center;
+				font-weight: 600;
+			}
+			.dialog__list--cancel{
+				color: $red;
+			}
+		}
+	}
+}

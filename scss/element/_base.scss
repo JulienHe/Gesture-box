@@ -1,0 +1,35 @@
+// On va créer des classes dites 'placeholder selector', perso je les nommes des classes discrète
+
+%basicSpace{
+	padding:1rem;
+}
+
+%circleImage{
+	@include border-radius(50%);
+}
+
+%animate{
+  @include transition-property(all);
+  @include transition-duration(.3s);
+}
+
+%animateFast{
+   @include transition-property(all);
+   @include transition-duration(.15s);
+}
+
+.noEvent{
+	pointer-events: none;
+	@include opacity(.5);
+}
+
+.fixedItem{
+	position: fixed;
+	@include opacity(.5);
+	 pointer-events: none;
+}
+
+[data-scrollable]{
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}

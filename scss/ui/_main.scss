@@ -1,0 +1,104 @@
+.main{
+	width: 100%;
+	@extend %animateFast;
+	//One article
+	.main--feed--article{
+		background-color: $white;
+		position: fixed;
+		right: -100%;
+		width: 100%;
+		padding-top: 44px;
+		@extend %animate;
+		&.visible{
+			right: 0;
+			top: 0;
+			position: absolute;
+			z-index: 100;
+		}
+		.main__feed__article--element{
+			.main__feed__article__element--image{
+				img{
+					width: 100%;
+					display: block;
+					vertical-align: top;
+				}
+			}
+		}
+		.main__feed__article--article{
+			@extend %basicSpace;;
+			.main__feed__article__article--title{
+				margin-top: 0;
+				font-size: 2.5em;
+				margin-bottom: .3em;
+			}
+			.main__feed__article__article--summary{
+				font-size: 1.6em;
+				font-weight: 100;
+			}
+		}
+	}
+	//The feed list
+	.main--feed--list{
+		background-color: $black;
+		position: absolute;
+		left: 0;
+		width: 100%;
+		padding-top: 44px;
+		@extend %animate;
+		&.hide{
+			left: -20px;
+			@include opacity(.2);
+			@include scale(.95);
+		}
+		.main__feed__list--element{
+			@extend %animateFast;
+			border-bottom: 1px solid $black;
+			position: relative;
+			&.readed{
+				@include opacity(.5);
+			}
+			.main__feed__list__element--image{
+				img{
+					width: 100%;
+					//Permet de ne pas avoir un espace en dessous de l'image
+					vertical-align: top;
+				}
+				.main__feed__list__element__image--text{
+					padding:1rem .5rem;
+					background-color: white;
+					.article--data{
+						margin-bottom: 0;
+					}
+					.main__feed__list__article--title{
+						margin-top: 0;
+						margin-bottom: .3rem;
+					}
+				}
+			}
+			.main__feed__list__element--like{
+				position: absolute;
+				font-size: 5rem;
+				top: 50%;
+				left: 50%;
+				color: $red;
+				@include translate(-50%, -70%);
+				pointer-events: none;
+				display: none;
+			}
+		}
+	}
+	.article--data{
+		font-family: 'Andada', serif;
+		margin-bottom: .4rem;
+		overflow: hidden;
+		font-size: 1.2em;
+		color: $gray;
+	}
+	time{
+		display: inline-block;
+		font-style: italic;
+		&:before{
+			content: '\00a0-\00a0';
+		}
+	}
+}

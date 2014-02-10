@@ -1,0 +1,35 @@
+[class|="button"]{
+	padding: .5rem 1rem;
+	margin: .5rem 0;
+	border: 1px solid $black;
+	@include border-radius(3px);
+	text-decoration: none;
+	color: $black;
+	font-size: 1.2em;
+	display: inline-block;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 600;
+	@extend %animateFast;
+}
+
+
+//Loop for the color of the button
+$names: readMore, visit;
+$colors: $blue, $red;
+
+//Create a loop for the button
+@for $i from 1 through length($names) {
+	
+    $this-color: nth($colors, $i); 
+	//Add the name with the good color
+    .button--#{nth($names, $i)} {
+        border-color: $this-color;
+		color: $this-color;
+		width: 100%;
+		&:hover{
+			background-color: $this-color;
+			color: $white;
+		}
+    }
+}
