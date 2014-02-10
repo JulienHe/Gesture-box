@@ -26,6 +26,7 @@
 .fixedItem{
 	position: fixed;
 	@include opacity(.5);
+	 pointer-events: none;
 }
 
 [data-scrollable]{

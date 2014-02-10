@@ -488,9 +488,10 @@ http://fontastic.me/app/ pour créer vos premières fonts
 .fixedItem {
   position: fixed;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-  opacity: 0.5; }
+  opacity: 0.5;
+  pointer-events: none; }
 
-/* line 31, ../scss/element/_base.scss */
+/* line 32, ../scss/element/_base.scss */
 [data-scrollable] {
   overflow: scroll;
   -webkit-overflow-scrolling: touch; }

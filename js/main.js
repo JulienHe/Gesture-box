@@ -1,9 +1,4 @@
-var utils = {};
-
-// log
-utils.log = function(message, force) {
-	console.log('%cGesture box: %c' + eval('(' + message + ')'), 'font-family:arial,sans-serif;color:#1abf89;line-height:20px;', 'font-family:cursor,monospace;color:#333;');
-};
+var revealWidth = $('.reveal').width(),revealPosition= '',myTimer = '';
 
 
 function toggleDialog(){
@@ -17,6 +12,10 @@ function toggleArticle(){
 	$('.main--feed--list').toggleClass('hide');
 }
 
+function toggleReveal(){
+	$('.reveal').toggleClass('visible');
+	$('.main').toggleClass('fixedItem');
+}
 
 // Maximum milliseconds between two taps before they are not considered 
 // a doubletap anymore.
@@ -70,15 +69,13 @@ $(function(){
 	//Show or hide reveal
 	Hammer($('.showReveal')).on("tap", function(event) {
 		console.log(event);
-		$('.reveal').addClass('visible');
-		$('.main').addClass('fixedItem');
+		toggleReveal();
 	});
 
 	//Show or hide reveal
 	Hammer($('.hideReveal')).on("tap", function(event) {
 		console.log(this, event);
-		$('.reveal').removeClass('visible');
-		$('.main').removeClass('fixedItem');
+		toggleReveal();
 	});
 
 	// Swipe an element
@@ -100,20 +97,45 @@ $(function(){
 
     //Hide the dialog
     Hammer($('.dialog__list--cancel')).on("tap", function(event) {
-		console.log(event);
-		var eventTap = $(this).data('event');
-		event.preventDefault();
-		if(eventTap == 'closeDialog'){
-			toggleDialog();
-		}
-	});
+    	console.log(event);
+    	var eventTap = $(this).data('event');
+    	event.preventDefault();
+    	if(eventTap == 'closeDialog'){
+    		toggleDialog();
+    	}
+    });
 
     //View article
     Hammer($('.main__feed__list--element')).on("tap", function(event) {
     	console.log(event.type);
-    	if(shouldDoNextTap(event.type)) {
-    		toggleArticle();
-    	}
+
+    	// Without Ajax
+    	// if(shouldDoNextTap(event.type)) {
+    	// 	toggleArticle();
+    	// }
+    	clearTimeout(myTimer);
+    	me = $(this);
+
+		myTimer = setTimeout(function () {
+			//Get the link from the data-attribute
+    		var url = me.data('link');
+    		console.log(url);
+    		$.ajax({
+				type:'GET',
+				url: url,
+				data: {},
+				success: function(data) {
+					//On success get the data
+					console.log(data);
+					//Add the content to the right place
+					$('.main__feed__article--element').html(data);
+					toggleArticle();
+				}, error: function(jqXHR, textStatus, errorThrown) {
+					//On fail, get status
+					console.log(jqXHR); 
+				}
+			});
+		}, 175);
     });
 
 
@@ -122,24 +144,17 @@ $(function(){
     	console.log(event.type);
     	toggleArticle();
     });
-        
+
     //like a post
     Hammer($('.main__feed__list--element')).on("doubletap", function(event) {
+    	clearTimeout(myTimer);
     	console.log(event.type);
     	event.stopPropagation();
     	event.preventDefault();
 		//event.preventDefault();
-    	$(this).find('.main__feed__list__element--like').fadeIn(200,function(){
-    		$(this).delay(300).fadeOut(400);
-    	});
-    });
-
-
-     Hammer($('.reveal')).on("drag", function(event) {
-        var touches = event.gesture.touches;
-        console.log(event.gesture.distance);
-        event.gesture.preventDefault();
-        // $(this).css({});
-    });
+		$(this).find('.main__feed__list__element--like').fadeIn(200,function(){
+			$(this).delay(300).fadeOut(400);
+		});
+	});
 
 });
