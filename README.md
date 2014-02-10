@@ -3,5 +3,13 @@ Gesture-box
 
 Repository Github pour les cours sur les gestures à Albert Jacquard
 
+#Links
 
-##[Hammer.js](https://www.google.com "Hammer")
+##[jQuery](http://jquery.com/ "jQuery")
+##[Hammer.js](https://github.com/EightMedia/hammer.js "Hammer")
+##[jQuery](http://jquery.com/ "jQuery")
+##[Fontastic](http://fontastic.me/ "Fontastic")
+
+
+#Books
+##[jQuery novice to ninja](http://www.sitepoint.com/store/jquery-novice-to-ninja-new-kicks-and-tricks/ "jQuery novice to ninja")
