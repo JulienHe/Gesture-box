@@ -9,7 +9,6 @@ Repository Github pour les workshops sur les gestures à Albert Jacquard
 
 [Hammer.js](https://github.com/EightMedia/hammer.js "Hammer")
 
-[jQuery](http://jquery.com/ "jQuery")
 
 [Fontastic](http://fontastic.me/ "Fontastic")
 
